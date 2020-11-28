@@ -1,0 +1,280 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+body
+{
+    font-family: 'Dosis', sans-serif;
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: rgba(240, 240, 191, 0.726);
+}
+header
+{
+    background-color: rgb(240, 240, 191);
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+    border-bottom: 4px solid black;
+}
+main
+{
+    min-height: calc(100vh - 100px);
+    padding-bottom: 150px;
+    background-color: rgb(228, 152, 66);
+    overflow: hidden;
+}
+.menu
+{
+    display: block;
+    position: relative;
+    height: 100px;
+}
+.menu button
+{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(240, 240, 191);
+    border: 3px solid black;
+    border-radius: 30%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 6px rgb(134, 84, 27);
+}
+.menu button:active
+{
+    box-shadow: 0 5px rgb(99, 60, 16);;
+    transform: translate(-50%, calc(-50% + 2px));
+}
+button.add
+{
+    top: 50%;
+    left: 25%;
+}
+button.search
+{
+    top: 50%;
+    left: 75%;
+}
+.menu input
+{
+    display: none;
+}
+.menu input.active
+{
+    position: absolute;
+    display: block;
+    border: 2px solid black;
+    box-shadow: -2px 2px 2px #333;
+    top: 90%;
+    left: 25%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 50%;
+    font-size: 20px;
+}
+button.inactive
+{
+    left: 50%;
+    top: 40%;
+    border: 2px solid black;
+    height: 28px;
+    width: 28px;
+    line-height: 25px;
+    font-size: 12px;
+}
+button.active
+{
+    top: 90%;
+    left: 15%;
+    height: 40px;
+    width: 40px;
+    line-height: 35px;
+    font-size: 20px;
+}
+ul
+{
+    display: block;
+    padding: 50px 25px;
+}
+ul li
+{
+    display: block;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: 600;
+    word-spacing: 2px;
+    animation: leftSlide 0.7s;
+}
+li.hide
+{
+    display: none;
+}
+li i
+{
+    font-size: 22px;
+    margin-right: 15px;
+    box-shadow: black -3px 3px 2px;
+    background-color: rgba(255, 0, 0, 0.589);
+}
+li i:active
+{
+    transform: scale(0.8);
+}
+li.active
+{
+    text-decoration: line-through;
+}
+li.active i
+{
+    background-color: rgb(81, 209, 81);
+}
+div.show
+{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: none;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    line-height: 146px;
+    border: 2px dashed white;
+}
+div.show.active
+{
+    cursor: pointer;
+    display: block;
+    animation: bottomSlide 0.5s linear;
+}
+@media(min-width: 768px)
+{
+    header
+    {
+        height: 150px;
+        line-height: 150px;
+        font-size: 32px;
+        border-bottom: 4px solid black;
+    }
+    main
+    {
+        min-height: calc(100vh - 150px);
+    }
+    .menu button
+    {
+        height: 70px;
+        width: 70px;
+        border: 4px solid black;
+        font-size: 32px;
+        box-shadow: 0 9px rgb(134, 84, 27);
+    }
+    .menu button:active
+    {
+        box-shadow: 0 5px rgb(99, 60, 16);;
+        transform: translate(-50%, calc(-50% + 4px));
+    }
+    .menu input.active
+    {
+        border: 3px solid black;
+        top: 95%;
+        height: 50px;
+        font-size: 25px;
+    }
+    form
+    {
+        padding: 80px;
+    }
+    button.inactive
+    {
+        top: 35%;
+        border: 3px solid black;
+        height: 60px;
+        width: 60px;
+        line-height: 35px;
+        font-size: 26px;
+    }
+    .menu input.active
+    {
+        height: 70px;
+        font-size: 40px;
+    }
+    button.active
+    {
+        top: 95%;
+        left: 18%;
+        height: 80px;
+        width: 80px;
+        line-height: 53px;
+        font-size: 40px;
+    }
+    ul
+    {
+        padding: 80px 80px;
+    }
+    ul li
+    {
+        font-size: 36px;
+        word-spacing: 2px;
+    }
+    li i
+    {
+        font-size: 32px;
+    }
+    div.show
+    {
+        font-size: 40px;
+    }
+}
+@media(min-width: 1024px)
+{
+    header
+    {
+        border: 4px solid black;
+        border-top: none;
+    }
+    main 
+    {
+        border: 4px solid black;
+        border-top: none;
+        border-bottom: none;
+    }
+}
+@keyframes leftSlide
+{
+    0%
+    {
+        transform: translate(-100%);
+    }
+    100%
+    {
+        transform: translate(0);
+    }
+}
+@keyframes bottomSlide
+{
+    0%
+    {
+        transform: translate(-50%,100%);
+    }
+    100%
+    {
+        transform: translate(-50%, 0);
+    }
+}
+
